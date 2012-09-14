@@ -1,0 +1,36 @@
+{
+    "name": "slk/slk-acl",
+    "description": "Access Control Lists Module for ZF2 applications",
+    "license": "BSD-3-Clause",
+    "keywords": [
+        "framework",
+        "zf2",
+        "acl",
+        "slk",
+        "zend",
+        "module"
+    ],
+    "homepage": "https://github.com/slaff/slk-acl",
+    "authors": [
+        {
+            "name": "Slavey Karadzhov",
+            "email": "slavey@zend.com"
+        }
+    ],
+    "minimal-stability": "dev",
+    "homepage": "http://framework.zend.com/",
+    "require": {
+        "php": ">=5.3.3",
+        "zendframework/zendframework": "dev-master",
+		"zf-commons/zfc-base": "dev-master",
+        "zf-commons/zfc-user": "dev-master"
+    },
+    "autoload": {
+        "psr-0": {
+            "SlkAcl": "src/"
+        },
+        "classmap": [
+            "./"
+        ]
+    }
+}

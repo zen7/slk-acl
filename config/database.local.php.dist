@@ -1,0 +1,14 @@
+<?php
+
+ return array(
+     'service_manager' => array(
+         'factories' => array(
+             'Zend\Db\Adapter\Adapter' => function ($sm) {
+                 return new Zend\Db\Adapter\Adapter(array(
+                     'driver'    => 'Pdo_Sqlite',
+                     'database'  => __DIR__.'/vendor/zf-commons/zfc-user/data/data.db',
+                 ));
+             },
+         ),
+     ),
+ );
