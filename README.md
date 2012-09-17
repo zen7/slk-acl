@@ -7,7 +7,7 @@ Requirements
 ----
 
 * PHP >= 5.3.3
-* Zend Framework 2.0.0 or later, specifically:
+* Zend Framework 2.0.0 or later
 * Modules:
 	zfc-base
 	zfc-user
