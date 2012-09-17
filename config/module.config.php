@@ -42,31 +42,35 @@ return array (
 				) 
 		),
 		
-		'router' => array(
-				'routes' => array(
-						'access' => array(
-								'type' => 'Literal',
-								'options' => array(
-										'route' => '/access/denied[/]',
-										'defaults' => array(
-												'__NAMESPACE__' => 'SlkAcl\Controller',
-												'controller'    => 'Access',
-												'action'        => 'denied',
+		'router' => array (
+				'routes' => array (
+						'slk-acl-access' => array (
+								'type' => 'Segment',
+								'options' => array (
+										'route' => '/access[/:action][/]',
+										'constraints' => array (
+												'action' => '[a-zA-Z][a-zA-Z0-9_-]*' 
 										),
+										'defaults' => array (
+												'__NAMESPACE__' => 'SlkAcl\Controller\Access',
+												'controller' => 'slk-acl-access',
+												'action' => 'denied' 
+										) 
 								),
-						),
-				)
+								'may_terminate' => true,
+						)
+				) 
 		),
 		
 		'controllers' => array(
 				'invokables' => array(
-						'SlkAcl\Controller\Access' => 'SlkAcl\Controller\AccessController'
+						'slk-acl-access' => 'SlkAcl\Controller\AccessController'
 				),
 		),
 		
 		'view_manager' => array(
 				'template_map' => array(
-						'SlkAcl/access/denied' => __DIR__ . '/../view/SlkAcl/access/denied.phtml',
+						'slk-acl/access/denied' => __DIR__ . '/../view/SlkAcl/access/denied.phtml',
 				),
 				'template_path_stack' => array(
 						__DIR__ . '/../view',

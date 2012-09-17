@@ -98,7 +98,7 @@ class Module
     		$response = $event->getResponse();
     		$response->setStatusCode(401);
     		
-    		$matches->setParam('controller','access');
+    		$matches->setParam('controller','slk-acl-access');
     		$matches->setParam('action','denied');
     		
     		return ;
